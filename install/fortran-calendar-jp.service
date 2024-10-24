@@ -1,0 +1,18 @@
+[Unit]
+Description=fortran-calendar-jp
+
+[Service]
+User=hss
+WorkingDirectory=/home/hss/2_tools/fortran-calendar-jp/data
+
+# For intel compiler
+#Environment = "MKL_ENABLE_INSTRUCTIONS=SSE4_2"
+#ExecStart=/bin/bash -c "source /opt/intel/oneapi/setvars.sh && fortran-calendar-jp --dir '/home/hss/2_tools/fortran-calendar-jp/data'"
+
+ExecStart=/usr/local/bin/fortran-calendar-jp --dir '/home/hss/2_tools/fortran-calendar-jp/data'
+
+[Install]
+WantedBy=multi-user.target
+
+# For specifiers
+# https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Specifiers
