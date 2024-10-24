@@ -41,8 +41,6 @@ program main
   cli%usage(i)  = '===================================================';i=i+1
   cli%n_usage   = i-1
 
-  call logger%init ( file = 'calendar.log', app = trim(cli%exe)//' @ HP-Z840', email = 'dsbiztiu@gmail.com' )
-
   ! Default
   date_fr = '2000-01-01'
 
@@ -56,6 +54,11 @@ program main
   date_to = datetime(1:10) 
 
   call cli%get_args ( dir, date_fr, date_to )
+
+  call logger%init ( file  = trim(dir)//'/calendar.log', &
+                     app   = trim(cli%exe)//' @ HP-Z840', &
+                     email = 'dsbiztiu@gmail.com' )
+
   call ho%download ( dir )
   call ho%init ( dir )
   call ca%init ( date_fr, date_to )
