@@ -1,20 +1,7 @@
-release:
-	make release -C ..
-
-debug:
-	make debug -C ..
-
-run:
-	make run -C ..
-
-debugrun:
-	make debugrun -C ..
-
-valgrind:
-	make valgrind -C ..
-
-clean:
-	make clean -C ..
+MKFILE:=-C .. -f makefile
 
 test:
-	make test -C ..
+	make test $(MKFILE)
+
+clean:
+	make clean $(MKFILE)

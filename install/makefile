@@ -6,10 +6,10 @@ release:
 	make release $(MKFILE)
 
 install:
-	make install -C .. -f makefile
+	make install $(MKFILE)
 
 uninstall:
-	make uninstall -C .. -f makefile
+	make uninstall $(MKFILE)
 
 service: install
 	cp ${DIR}${APP}.service /etc/systemd/system/ && \

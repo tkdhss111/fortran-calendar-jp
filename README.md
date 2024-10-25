@@ -32,6 +32,7 @@ A Simple Japanese Calendar Server
 # Install
 
 Go to the "install" subdirectory and 
+edit fortran-calendar-jp.servie and fortran-calendar-jp.timer with your working directory.
 
 ```
 make release
