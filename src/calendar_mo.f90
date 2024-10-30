@@ -24,6 +24,7 @@ module calendar_mo
     character(80), allocatable :: event(:)  ! Event description for special term 
     character(5),  allocatable :: md(:)     ! mm-dd (month and day) 
     integer,       allocatable :: dow(:, :) ! Day of the week dummy 
+    integer,       allocatable :: wk(:)     ! Week number within a year 
     integer,       allocatable :: gr(:)     ! Group of special term (Sun:1--Sat:7 on April 1st )
     integer,       allocatable :: wd(:)     ! Weekday dummy
     integer,       allocatable :: ho(:)     ! Holiday dummy
@@ -85,6 +86,7 @@ contains
     allocate ( this%event(this%nts) )
     allocate ( this%md   (this%nts) )
     allocate ( this%dow(this%nts, 7), source = 0 )
+    allocate ( this%wk(this%nts),     source = 0 )
     allocate ( this%gr(this%nts),     source = 0 )
     allocate ( this%wd(this%nts),     source = 0 )
     allocate ( this%ho(this%nts),     source = 0 )
@@ -120,6 +122,7 @@ contains
     ! year     |年（yyyy形式） 
     ! month    |月（m形式）
     ! day      |日（d形式）
+    ! wk       |週番号
     ! su       |日曜ダミー
     ! mo       |月曜ダミー
     ! tu       |火曜ダミー
@@ -134,7 +137,7 @@ contains
     ! sp       |特異日ダミー
     ! ab       |異常日ダミー
 
-    csnm = 'date,dow,name,event,md,gr,year,month,day,su,mo,tu,we,th,fr,sa,wd,ho,bw,af,sp,ab'   
+    csnm = 'date,dow,name,event,md,gr,year,month,day,wk,su,mo,tu,we,th,fr,sa,wd,ho,bw,af,sp,ab'   
 
     call logger%open ( __FILE__, __LINE__, newunit = u, file = file, status = 'replace' )
     write (  u, '(a)' ) csnm
@@ -148,6 +151,7 @@ contains
       write ( csv, '(a, i4)' ) trim(csv)//',', ca%ts(i)%yr
       write ( csv, '(a, i2)' ) trim(csv)//',', ca%ts(i)%mo
       write ( csv, '(a, i2)' ) trim(csv)//',', ca%ts(i)%dy
+      write ( csv, '(a, i2)' ) trim(csv)//',', ca%wk(i)
       do j = 1, 7
         write ( csv, '(a, i1)' ) trim(csv)//',', ca%dow(i, j)
       end do
@@ -165,6 +169,48 @@ contains
 
   end subroutine write_csv
 
+  subroutine make_week_number ( this )
+
+    ! Increment by Monday
+
+    class(ca_ty), intent(inout) :: this
+    type(dt_ty) :: t
+    integer wk  ! Week number
+    integer pyr ! Present year
+    integer nts, i, k
+
+    nts = size(this%ts)
+    pyr = this%ts(1)%yr
+
+    t = strptime ( this%ts(1)%yyyy//'-01-01', '%Y-%m-%d' )
+
+    wk = 1
+    k = 1
+
+    do while ( k <= nts )
+
+      if ( this%ts(k)%datetime == t%datetime ) then
+        this%wk(k) = wk
+        k = k + 1
+      end if
+
+      t = t%plus ( days = 1 )
+
+      ! Count Mondays
+      if ( t%dow == 2 ) then ! 2: Monday
+        wk = wk + 1
+      end if
+
+      if ( t%yr > pyr ) then
+        pyr = t%yr
+        wk = 1
+      end if
+
+      !__LOG__( paste( 't%datetime: ', t%datetime, ', dow:', t%dow, ', wk:', wk, ', pyr:', pyr ) )
+    end do
+
+  end subroutine
+
   subroutine make_calendar ( this, dir, ho )
 
     class(ca_ty), intent(inout) :: this
@@ -174,6 +220,11 @@ contains
     integer i, j, i_d, i_y, it
 
     __LOG__( 'S: make_calendar' )
+
+    !
+    ! Set week number
+    !
+    call make_week_number ( this )
 
     !
     ! Set name of a day
