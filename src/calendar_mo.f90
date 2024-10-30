@@ -194,9 +194,9 @@ contains
       if ( it > 0 ) then
         this%ho(it) = 1
         if ( ho%ts(i)%nm == '休日' ) then ! Make nameless holiday unique
-          this%ts(it)%nm = '祝日('//this%md(it)//')'
+          this%ts(it)%nm = '祝日（'//this%md(it)//'）'
         else
-          this%ts(it)%nm = '祝日('//trim(ho%ts(i)%nm)//')'
+          this%ts(it)%nm = '祝日（'//trim(ho%ts(i)%nm)//'）'
         end if
       end if
     end do
@@ -247,7 +247,7 @@ contains
               this%ho(i + 1) * this%dow(i - 1, 1) == 1 )    & ! Between Sunday and holiday
           ) then
         this%bw(i) = 1
-        this%ts(i)%nm = '平日(休日間)' 
+        this%ts(i)%nm = '平日（休日間）' 
       end if
     end do
 
@@ -261,7 +261,7 @@ contains
               this%dow(i - 1, 1) == 1 ) & ! Previous day is holiday or Sunday
           ) then
         this%af(i) = 1
-        this%ts(i)%nm = '平日(休日明)'!（除：休日間平日）
+        this%ts(i)%nm = '平日（休日明）'!（除：休日間平日）
       end if
     end do
 
@@ -283,19 +283,19 @@ contains
     ! Golden Week
     where ( '05-03' <= this%md .and. this%md <= '05-05' )
       this%sp = 1
-      this%event = 'GW('//this%md//')'
+      this%event = 'GW（'//this%md//'）'
     end where
 
     where ( (this%md == '04-30' .or. this%md == '05-01' .or. this%md == '05-02' ) .and. this%wd == 1 )
       this%sp = 1
-      this%event = 'GW('//this%md//')'
+      this%event = 'GW（'//this%md//'）'
     end where
 
     ! Obon Week
-    !where ( '08-13' <= this%md .and. this%md <= '08-1                6' )
+    !where ( '08-13' <= this%md .and. this%md <= '08-16' )
     where ( '08-12' <= this%md .and. this%md <= '08-18' )
-      this%sp = 17
-      this%event = 'お盆('//this%md//')'
+      this%sp = 1
+      this%event = 'お盆（'//this%md//'）'
     end where
 
     !where ( this%md == '08-12' .and. LAB_WDAY_JP(this%ts%dow) == '月' )
@@ -312,13 +312,13 @@ contains
     !where ( '12-29' <= this%md .and. this%md <= '12-31' )
     where ( '12-28' <= this%md .and. this%md <= '12-31' )
       this%sp = 1
-      this%event = '年末年始('//this%md//')'
+      this%event = '年末年始（'//this%md//'）'
     end where
 
     !where ( '01-01' <= this%md .and. this%md <= '01-03' )
     where ( '01-01' <= this%md .and. this%md <= '01-05' )
       this%sp = 1
-      this%event = '年末年始('//this%md//')'
+      this%event = '年末年始（'//this%md//'）'
     end where
 
 block
@@ -327,14 +327,14 @@ block
     !where ( this%md == '12-28' .and. LAB_WDAY_JP(this%ts%dow) == '月' ) ! Bug report is required?
     where ( this%md == '12-28' .and. LAB_WDAY_JP(dows) == '月' )
       this%sp = 1
-      this%event = '年末年始('//this%md//')'
+      this%event = '年末年始（'//this%md//'）'
     end where
 
     ! ToDo: Investigate the effectiveness
     !where ( this%md == '01-04' .and. LAB_WDAY_JP(this%ts%dow) == '金' ) ! Bug report is required?
     where ( this%md == '01-04' .and. LAB_WDAY_JP(dows) == '金' )
       this%sp = 1
-      this%event = '年末年始('//this%md//')'
+      this%event = '年末年始（'//this%md//'）'
     end where
 end block
 
