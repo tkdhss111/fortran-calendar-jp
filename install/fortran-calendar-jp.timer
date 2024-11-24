@@ -3,7 +3,11 @@ Description=fortran-calendar-jp
 
 [Timer]
 OnBootSec=0s
-OnCalendar=*-03-01,02,03 12:00:00
+#OnCalendar=*-03-01,02,03 12:00:00
+OnCalendar=*-*-15 12:00:00
 
 [Install]
 WantedBy=multi-user.target
+
+# For specifiers
+#https://www.freedesktop.org/software/systemd/man/systemd.time.html#

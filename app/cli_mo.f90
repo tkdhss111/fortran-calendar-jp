@@ -35,7 +35,7 @@ module cli_mo
 
     module subroutine get_character ( str, i_arg )
       character(*), intent(inout) :: str
-      integer     , intent(inout) :: i_arg
+      integer,      intent(inout) :: i_arg
     end subroutine
 
     module subroutine get_integer ( ival, i_arg )
@@ -48,8 +48,8 @@ module cli_mo
       integer, intent(inout) :: i_arg
     end subroutine
 
-    module subroutine get_logical ( ox, i_arg )
-      logical, intent(inout) :: ox
+    module subroutine get_logical ( ok, i_arg )
+      logical, intent(inout) :: ok
       integer, intent(inout) :: i_arg
     end subroutine
 

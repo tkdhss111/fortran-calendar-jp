@@ -1,8 +1,8 @@
 set ( EXE unit_test )
 set ( ARGS
   --dir "../../data"
-  --date_fr "2010-01-01"
-  --date_to "2021-12-31"
+  #--date_fr "2010-01-01"
+  #--date_to "2021-12-31"
   )
 set ( SRCS 
   ~/2_tools/fortran-logger/src/logger_mo.f90

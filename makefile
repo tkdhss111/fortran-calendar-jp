@@ -3,14 +3,14 @@ CMAKE_RLS   := $(CMAKE) -DCMAKE_BUILD_TYPE=Release
 CMAKE_DBG   := $(CMAKE) -DCMAKE_BUILD_TYPE=Debug
 MKDIR_BUILD := mkdir -p build && cd build
 
+.PHONY: test install
+
 release:
 	$(MKDIR_BUILD) && $(CMAKE_RLS) && ninja
 
-.PHONY: test
 test: 
 	$(MKDIR_BUILD) && $(CMAKE_DBG) && ninja && ctest -VV
 
-.PHONY: install
 install:
 	cd build && ninja install
 

@@ -177,7 +177,7 @@ contains
     type(dt_ty) :: t
     integer wk  ! Week number
     integer pyr ! Present year
-    integer nts, i, k
+    integer nts, k
 
     nts = size(this%ts)
     pyr = this%ts(1)%yr
