@@ -8,6 +8,12 @@ module calendar_mo
 
   implicit none
 
+  private
+  public :: logger
+  public :: ho_ty
+  public :: ca_ty
+  public :: csv2parquet
+
   type ho_ty
     type(dt_ty), allocatable :: ts(:) ! Datetimes
     integer                  :: nts   ! Number of datetimes
@@ -34,8 +40,9 @@ module calendar_mo
     integer,       allocatable :: ab(:)     ! Abnormal day dummy
     integer                    :: nts       ! Number of datetimes
   contains
-    procedure :: init => init_calendar
-    procedure :: make => make_calendar
+    procedure :: init  => init_calendar
+    procedure :: make  => make_calendar
+    procedure :: write => write_calendar
   end type
 
   ! Special days type
@@ -102,9 +109,9 @@ contains
 
   end subroutine init_calendar
 
-  subroutine write_csv ( ca, file )
+  subroutine write_calendar ( ca, file )
 
-    type(ca_ty),  intent(in) :: ca
+    class(ca_ty),  intent(in) :: ca
     character(*), intent(in) :: file
     character(2000)          :: csv, csnm
     integer i, j, u
@@ -167,7 +174,22 @@ contains
 
     __LOG__( 'E: write_csv' )
 
-  end subroutine write_csv
+  end subroutine write_calendar
+
+  subroutine csv2parquet ( csv, parquet )
+
+    character(*), intent(in) :: csv, parquet
+    character(255)           :: query
+
+    __LOG__( 'S: csv2parquet' )
+
+    query = 'COPY "'//trim(csv)//'" TO "'//trim(parquet)//'" WITH(FORMAT "parquet")'
+
+    __EXEC__( "duckdb :memory: '"//trim(query)//"'" )
+
+    __LOG__( 'E: csv2parquet' )
+
+  end subroutine csv2parquet
 
   subroutine make_week_number ( this )
 

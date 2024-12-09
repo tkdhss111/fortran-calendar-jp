@@ -1,12 +1,13 @@
 set ( EXE unit_test )
 set ( ARGS
-  --dir "../../data"
+  --dir "${MYHOME}/2_tools/fortran-calendar-jp/data"
   #--date_fr "2010-01-01"
   #--date_to "2021-12-31"
   )
+
 set ( SRCS 
-  ~/2_tools/fortran-logger/src/logger_mo.f90
-  ~/2_tools/fortran-datetime/src/dt_mo.f90
+  ${MYHOME}/2_tools/fortran-logger/src/logger_mo.f90
+  ${MYHOME}/2_tools/fortran-datetime/src/dt_mo.f90
   ../app/cli_mo.f90
   ../app/main.f90
   ../src/calendar_mo.f90

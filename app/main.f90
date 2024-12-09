@@ -63,6 +63,7 @@ program main
   call ho%init ( dir )
   call ca%init ( date_fr, date_to )
   call ca%make ( dir, ho )
-  call write_csv ( ca, trim(dir)//'/calendar.csv' )
+  call ca%write ( trim(dir)//'/calendar.csv' )
+  call csv2parquet ( trim(dir)//'/calendar.csv', trim(dir)//'/calendar.parquet' )
 
 end program
