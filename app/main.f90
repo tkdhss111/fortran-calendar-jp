@@ -55,7 +55,7 @@ program main
 
   call cli%get_args ( dir, date_fr, date_to )
 
-  call logger%init ( file  = trim(dir)//'/calendar.log', &
+  call logger%init ( file  = trim(dir)//'/fortran-calendar-jp.log', &
                      app   = trim(cli%exe)//' @ HP-Z840', &
                      email = 'dsbiztiu@gmail.com' )
 

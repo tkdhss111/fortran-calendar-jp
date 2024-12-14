@@ -178,12 +178,16 @@ contains
 
   subroutine csv2parquet ( csv, parquet )
 
-    character(*), intent(in) :: csv, parquet
-    character(255)           :: query
+    character(*), intent(in)    :: csv, parquet
+    character(255)              :: query
 
     __LOG__( 'S: csv2parquet' )
 
-    query = 'COPY "'//trim(csv)//'" TO "'//trim(parquet)//'" WITH(FORMAT "parquet")'
+    ! Do not include TIMESTAMP-related column types,
+    ! or duckdb automatically converts datetime to UTC datatime.
+    query = 'COPY (SELECT * FROM read_csv("'//trim(csv)//&
+      '", auto_type_candidates = ["BOOLEAN", "INTEGER", "FLOAT", "VARCHAR"])) TO "'//&
+      trim(parquet)//'" WITH(FORMAT PARQUET)'
 
     __EXEC__( "duckdb :memory: '"//trim(query)//"'" )
 

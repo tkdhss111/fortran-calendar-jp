@@ -11,5 +11,5 @@ if (WIN32)
   set ( MYHOME C:/Users/hss/0_tkd/1_hss )
 endif (WIN32)
 
-#add_subdirectory ( app )
+add_subdirectory ( app )
 add_subdirectory ( test )

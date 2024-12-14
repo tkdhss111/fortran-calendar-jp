@@ -2,6 +2,8 @@ APP:=fortran-calendar-jp
 DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 MKFILE:=-C .. -f makefile
 
+.PHONY: install
+
 release:
 	make release $(MKFILE)
 
