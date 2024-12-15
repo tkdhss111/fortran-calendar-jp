@@ -46,9 +46,9 @@ program main
 
   t = t%now()
   if ( t%mo < 3 ) then ! New calendar will be released on Feb. 15
-    datetime = get_datetime ( yr0 = t%yr, mo0 = 12, dy0 = 31 )
+    datetime = get_datetime ( yr = t%yr, mo = 12, dy = 31 )
   else
-    datetime = get_datetime ( yr0 = t%yr + 1, mo0 = 12, dy0 = 31 )
+    datetime = get_datetime ( yr = t%yr + 1, mo = 12, dy = 31 )
   end if
 
   date_to = datetime(1:10) 

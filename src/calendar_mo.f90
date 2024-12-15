@@ -186,7 +186,7 @@ contains
     ! Do not include TIMESTAMP-related column types,
     ! or duckdb automatically converts datetime to UTC datatime.
     query = 'COPY (SELECT * FROM read_csv("'//trim(csv)//&
-      '", auto_type_candidates = ["BOOLEAN", "INTEGER", "FLOAT", "VARCHAR"])) TO "'//&
+      '", auto_type_candidates = ["BOOLEAN", "BIGINT", "DOUBLE", "VARCHAR"])) TO "'//&
       trim(parquet)//'" WITH(FORMAT PARQUET)'
 
     __EXEC__( "duckdb :memory: '"//trim(query)//"'" )
@@ -482,9 +482,9 @@ end block
     end do
     close ( u )
 
-    this%ts = strptime ( get_datetime ( yr0 = this%ts%yr, &
-                                        mo0 = this%ts%mo, &
-                                        dy0 = this%ts%dy ) )
+    this%ts = strptime ( get_datetime ( yr = this%ts%yr, &
+                                        mo = this%ts%mo, &
+                                        dy = this%ts%dy ) )
     this%ts%nm = nms
 
     ! Until 2019, Gym Day (体育の日)
