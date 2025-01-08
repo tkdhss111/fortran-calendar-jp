@@ -1,79 +1,77 @@
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][      logger_mo: 141] *** Info: Command (successful): rm -f /home/hss/2_tools/fortran-calendar-jp/data/fortran-calendar-jp.log
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][      logger_mo: 144] *** Info: file = /home/hss/2_tools/fortran-calendar-jp/data/fortran-calendar-jp.log
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][      logger_mo: 145] *** Info: email = dsbiztiu@gmail.com
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][      logger_mo: 146] *** Info: colored = F
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][      logger_mo: 147] *** Info: debuglevel = 1
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][    calendar_mo: 439] Log: S: download_holidays
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][    calendar_mo: 447] *** Info: Command (successful): curl https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv -o /home/hss/2_tools/fortran-calendar-jp/data/syukujitsu.csv
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:00][    calendar_mo: 448] *** Info: National Holidays Calendar has been successfully downloaded.
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:11][    calendar_mo: 451] *** Info: Command (successful): iconv -f sjis -t utf-8 /home/hss/2_tools/fortran-calendar-jp/data/syukujitsu.csv --output /home/hss/2_tools/fortran-calendar-jp/data/syukujitsu_utf8.csv
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:11][    calendar_mo: 456] *** Info: Command (successful): sed -i "s!/! !g" /home/hss/2_tools/fortran-calendar-jp/data/syukujitsu_utf8.csv
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:11][    calendar_mo: 458] Log: E: download_holidays
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:11][    calendar_mo: 470] Log: S: init_holidays
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1966-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1967-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1968-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1969-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1970-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1971-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1972-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1973-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1974-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1975-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1976-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1977-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1978-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1979-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1980-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1981-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1982-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1983-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1984-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1985-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1986-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1987-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1988-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1989-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1990-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1991-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1992-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1993-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1994-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1995-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1996-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1997-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1998-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1999-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2000-10-09
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2001-10-08
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2002-10-14
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2003-10-13
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2004-10-11
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2005-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2006-10-09
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2007-10-08
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2008-10-13
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2009-10-12
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2010-10-11
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2011-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2012-10-08
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2013-10-14
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2014-10-13
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2015-10-12
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2016-10-10
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2017-10-09
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2018-10-08
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2019-10-14
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 498] Log: E: init_holidays
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo:  84] Log: S: init_calendar
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo:  91] Log: nts: 9497 date_fr: 2000-01-01 , date_to: 2025-12-31
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 108] Log: E: init_calendar
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 248] Log: S: make_calendar
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo:  64] Log: S: read_special_days
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo:  75] Log: E: read_special_days
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 431] Log: E: make_calendar
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 119] Log: S: write_csv
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 175] Log: E: write_csv
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 184] Log: S: csv2parquet
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 192] *** Info: Command (successful): duckdb :memory: 'COPY (SELECT * FROM read_csv("/home/hss/2_tools/fortran-calendar-jp/data/calendar.csv", auto_type_candidates = ["BOOLEAN", "INTEGER", "FLOAT", "VARCHAR"])) TO "/home/hss/2_tools/fortran-calendar-jp/data/calendar.parquet" WITH(FORMAT PARQU
- [fortran-calendar-jp @ HP-Z840][2024-12-15 12:00:12][    calendar_mo: 194] Log: E: csv2parquet
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][      logger_mo: 141] *** Info: Command (successful): rm -f /home/hss/2_tools/fortran-calendar-jp/data/fortran-calendar-jp.log
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][      logger_mo: 144] *** Info: file = /home/hss/2_tools/fortran-calendar-jp/data/fortran-calendar-jp.log
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][      logger_mo: 145] *** Info: email = dsbiztiu@gmail.com
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][      logger_mo: 146] *** Info: colored = F
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][      logger_mo: 147] *** Info: debuglevel = 1
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 439] Log: S: download_holidays
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 451] *** Info: Command (successful): iconv -f sjis -t utf-8 /home/hss/2_tools/fortran-calendar-jp/data/syukujitsu.csv --output /home/hss/2_tools/fortran-calendar-jp/data/syukujitsu_utf8.csv
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 456] *** Info: Command (successful): sed -i "s!/! !g" /home/hss/2_tools/fortran-calendar-jp/data/syukujitsu_utf8.csv
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 458] Log: E: download_holidays
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 470] Log: S: init_holidays
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1966-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1967-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1968-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1969-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1970-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1971-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1972-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1973-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1974-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1975-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1976-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1977-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1978-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1979-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1980-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1981-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1982-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1983-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1984-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1985-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1986-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1987-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1988-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1989-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1990-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1991-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1992-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1993-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1994-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1995-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1996-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1997-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1998-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 1999-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2000-10-09
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2001-10-08
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2002-10-14
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2003-10-13
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2004-10-11
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2005-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2006-10-09
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2007-10-08
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2008-10-13
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2009-10-12
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2010-10-11
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2011-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2012-10-08
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2013-10-14
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2014-10-13
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2015-10-12
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2016-10-10
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2017-10-09
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2018-10-08
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 493] Log: Renamed: 体育の日 -> スポーツの日 on 2019-10-14
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 498] Log: E: init_holidays
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo:  84] Log: S: init_calendar
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo:  91] Log: nts: 9497 date_fr: 2000-01-01 , date_to: 2025-12-31
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 108] Log: E: init_calendar
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 248] Log: S: make_calendar
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo:  64] Log: S: read_special_days
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo:  75] Log: E: read_special_days
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 431] Log: E: make_calendar
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 119] Log: S: write_csv
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 175] Log: E: write_csv
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:30][    calendar_mo: 184] Log: S: csv2parquet
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:31][    calendar_mo: 192] *** Info: Command (successful): duckdb :memory: 'COPY (SELECT * FROM read_csv("/home/hss/2_tools/fortran-calendar-jp/data/calendar.csv", auto_type_candidates = ["BOOLEAN", "BIGINT", "DOUBLE", "VARCHAR"])) TO "/home/hss/2_tools/fortran-calendar-jp/data/calendar.parquet" WITH(FORMAT PARQU
+ [fortran-calendar-jp @ HP-Z840][2025-01-08 09:12:31][    calendar_mo: 194] Log: E: csv2parquet

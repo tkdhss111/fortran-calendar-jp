@@ -14,12 +14,9 @@ set ( SRCS
   )
 
 set ( CMAKE_Fortran_FLAGS
-  "-ffree-line-length-none -Wno-maybe-uninitialized -fcoarray=single")
-
-if ( CMAKE_BUILD_TYPE MATCHES "Debug" )
-  set ( CMAKE_Fortran_FLAGS_DEBUG
-    "-Ddebug -O0 -fbounds-check -fbacktrace -Wall" )
-endif()
+  "-ffree-line-length-none -fcoarray=single")
+set ( CMAKE_Fortran_FLAGS_DEBUG
+  "-Ddebug -O0 -fbounds-check -fbacktrace -Wall -Wno-uninitialized -Wno-maybe-uninitialized ${CMAKE_Fortran_FLAGS}" )
 
 add_executable ( ${EXE} ${SRCS} )
 target_include_directories ( ${EXE} PUBLIC "../include" )
