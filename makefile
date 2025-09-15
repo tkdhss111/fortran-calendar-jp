@@ -19,3 +19,9 @@ uninstall:
 
 clean:
 	rm -r build
+	rm -f tags
+
+git:
+	git add . && \
+	git commit -m "$(shell hostname)" && \
+	git push

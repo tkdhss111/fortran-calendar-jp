@@ -149,11 +149,16 @@ contains
     call logger%open ( __FILE__, __LINE__, newunit = u, file = file, status = 'replace' )
     write (  u, '(a)' ) csnm
     do i = 1, ca%nts
-      write ( csv, '(a)' ) '"'//ca%ts(i)%date//'"'
-      write ( csv, '(a)' ) trim(csv)//',"'//LAB_WDAY_JP(ca%ts(i)%dow)//'"'
-      write ( csv, '(a)' ) trim(csv)//',"'//trim(ca%ts(i)%nm)//'"'
-      write ( csv, '(a)' ) trim(csv)//',"'//trim(ca%event(i))//'"'
-      write ( csv, '(a)' ) trim(csv)//',"'//ca%md(i)//'"'
+      !write ( csv, '(a)' ) '"'//ca%ts(i)%date//'"'
+      !write ( csv, '(a)' ) trim(csv)//',"'//LAB_WDAY_JP(ca%ts(i)%dow)//'"'
+      !write ( csv, '(a)' ) trim(csv)//',"'//trim(ca%ts(i)%nm)//'"'
+      !write ( csv, '(a)' ) trim(csv)//',"'//trim(ca%event(i))//'"'
+      !write ( csv, '(a)' ) trim(csv)//',"'//ca%md(i)//'"'
+      write ( csv, '(a)' ) ca%ts(i)%date
+      write ( csv, '(a)' ) trim(csv)//','//LAB_WDAY_JP(ca%ts(i)%dow)
+      write ( csv, '(a)' ) trim(csv)//','//trim(ca%ts(i)%nm)
+      write ( csv, '(a)' ) trim(csv)//','//trim(ca%event(i))
+      write ( csv, '(a)' ) trim(csv)//','//ca%md(i)
       write ( csv, '(a, i1)' ) trim(csv)//',', ca%gr(i)
       write ( csv, '(a, i4)' ) trim(csv)//',', ca%ts(i)%yr
       write ( csv, '(a, i2)' ) trim(csv)//',', ca%ts(i)%mo
@@ -363,7 +368,8 @@ contains
       this%event = 'GW（'//this%md//'）'
     end where
 
-    where ( (this%md == '04-30' .or. this%md == '05-01' .or. this%md == '05-02' ) .and. this%wd == 1 )
+    where ( this%md == '04-29' .or. this%md == '04-30' .or. this%md == '05-01' .or. this%md == '05-02' )
+    !where ( (this%md == '04-30' .or. this%md == '05-01' .or. this%md == '05-02' ) .and. this%wd == 1 )
       this%sp = 1
       this%event = 'GW（'//this%md//'）'
     end where
